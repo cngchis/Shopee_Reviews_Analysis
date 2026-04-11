@@ -79,7 +79,7 @@ Raw Review
 ### 1. Clone repository
 
 ```bash
-git clone https://github.com/<your-username>/Shopee_Sentiment_Analysis.git
+git clone https://github.com/cngchis/Shopee_Reviews_Analysis.git
 cd Shopee_Sentiment_Analysis
 ```
 
