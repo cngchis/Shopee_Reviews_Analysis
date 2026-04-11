@@ -1,63 +1,138 @@
-# Shopee Reviews Analysis
+# 🛍️ Vietnamese E-commerce Sentiment Analysis
 
-## Introduction
+> End-to-end Machine Learning pipeline for Vietnamese product review classification  
+> Built with NLP, TF-IDF, and deployed via Gradio on Hugging Face Spaces
 
-This project performs analysis and classification of Shopee reviews using Machine Learning and Natural Language Processing (NLP) techniques for the Vietnamese language.
+---
 
-## Project Structure
+## 📌 Overview
 
-- `Shopee_Reviews_Analysis.ipynb`: Jupyter Notebook containing the entire source code for analysis, data preprocessing, and model training.
-- `Data/`: Directory containing training and validation data.
-  - `train.csv`: Training dataset.
-  - `val.csv`: Validation dataset.
-- `Stopword/`: Directory containing the list of stopwords.
-  - `vietnamese-stopwords.txt`: List of Vietnamese stopwords.
+This project implements a complete **sentiment analysis system** for Vietnamese e-commerce reviews.
 
-## System Requirements
+The goal is to automatically classify product reviews into **positive** or **negative** sentiment, helping businesses better understand customer feedback and improve decision-making.
 
-To run this project, you need to install the following Python libraries:
+The system follows a full **end-to-end Machine Learning workflow**, from raw data processing to deployment as an interactive web application.
 
-- Python 3.x
-- pandas
-- numpy
-- matplotlib
-- seaborn
-- plotly
-- pyvi (Vietnamese text processing library)
-- scikit-learn
+---
 
-You can install these libraries using pip:
+## 🎯 Objectives
 
-```bash
-pip install pandas numpy matplotlib seaborn plotly pyvi scikit-learn
-```
+- Build a robust pipeline for Vietnamese text processing
+- Apply Machine Learning techniques for sentiment classification
+- Deploy a real-time inference system using Gradio
+- Simulate a production-ready ML workflow
 
-## Methodology
+---
+
+## 🌟 Key Features
+
+- 🇻🇳 Vietnamese text preprocessing (cleaning, tokenization, stopword removal)
+- 🧠 TF-IDF feature extraction with n-grams
+- 🤖 Machine Learning models (SVM)
+- ⚡ Real-time prediction via Gradio interface
+- 🚀 Deployment on Hugging Face Spaces
+- 🧩 Modular pipeline design (easy to extend & maintain)
+
+---
+
+## 🔄 Pipeline
+
+The system processes input text through the following pipeline:
+
+Raw Review
+- Text Cleaning
+- Tokenization (PyVi)
+- Stopword Removal
+- TF-IDF Vectorization
+- Model Prediction
+- Sentiment Output (Positive / Negative)
+
+
+---
+
+## 🧠 Methodology
 
 ### 1. Data Preprocessing
+- Convert text to lowercase
+- Remove URLs, mentions (@), hashtags (#)
+- Remove numbers and special characters
+- Normalize whitespace
 
-- **Text Cleaning:**
-  - Convert to lowercase.
-  - Remove URLs, mentions (@), hashtags (#).
-  - Remove numbers and special characters.
-  - Standardize whitespace.
-- **Tokenization:** Use the `pyvi` library for Vietnamese word segmentation.
-- **Stopword Removal:** Remove words with little meaning based on the list in `vietnamese-stopwords.txt`.
+### 2. Tokenization
+- Use `pyvi` for Vietnamese word segmentation
 
-### 2. Feature Extraction
+### 3. Stopword Removal
+- Filter out common Vietnamese stopwords to reduce noise
 
-- Use **TF-IDF (Term Frequency-Inverse Document Frequency)** to convert text into numerical feature vectors.
+### 4. Feature Engineering
+- Apply **TF-IDF (Term Frequency - Inverse Document Frequency)**
+- Support n-grams to capture contextual information
 
-### 3. Modeling
+### 5. Modeling
+- Support Vector Machine (SVM)
+- Lightweight and efficient for real-time inference
 
-- Use the **Support Vector Machine (SVM)** algorithm for review classification.
+---
 
-## Usage
+## 🚀 Quick Start
 
-1.  Ensure you have installed all necessary libraries.
-2.  Open the `Shopee_Reviews_Analysis.ipynb` file using Jupyter Notebook or Google Colab.
-3.  Run the cells in the notebook sequentially to perform the analysis and model training process.
+### 1. Clone repository
 
-## Results
+```bash
+git clone https://github.com/<your-username>/Shopee_Sentiment_Analysis.git
+cd Shopee_Sentiment_Analysis
+```
 
-The project analyzes the distribution of labels in the dataset and builds a model to predict the sentiment/classification of new reviews.
+### 2. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Run application
+
+```bash
+python app.py
+```
+
+🌐 Demo
+
+👉 Try the live demo on Hugging Face Spaces:
+<https://huggingface.co/spaces/cngchis/Shopee_Sentiment_Analysis>
+
+---
+
+📊 Results
+- Efficient sentiment classification for Vietnamese reviews
+- Fast inference using lightweight ML models
+- Scalable pipeline design for real-world applications
+
+---
+
+🚧 Future Improvements
+- 🔥 Upgrade to Deep Learning models (LSTM, BERT, PhoBERT)
+- 📊 Add multi-class sentiment (positive / neutral / negative)
+- ⚡ Optimize preprocessing & feature engineering
+- 🌐 Deploy as REST API using FastAPI
+- 📈 Add monitoring & logging for production
+
+---
+
+🧠 Lessons Learned
+Importance of text preprocessing in NLP tasks
+Trade-offs between traditional ML and deep learning
+Designing modular pipelines for scalability
+Deploying ML models as real-time applications
+
+---
+
+📄 License
+MIT
+
+---
+
+🙌 Acknowledgements
+- scikit-learn for Machine Learning models
+- pyvi for Vietnamese NLP processing
+- Gradio for building interactive UI
+- Hugging Face Spaces for deployment
